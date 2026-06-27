@@ -144,7 +144,7 @@ body {
 .hero {
   min-height: 100vh; background: var(--sage);
   display: flex; flex-direction: column; justify-content: center;
-  position: relative; overflow: hidden; padding: 180px 48px 60px;
+  position: relative; overflow: hidden; padding: 200px 48px 60px;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
@@ -194,6 +194,10 @@ body {
 }
 /* was rgba(…,0.55) — fails badly */
 .panel-sub { font-size: 14px; color: rgba(252,250,245,0.90); margin-top: 4px; font-weight: 400; }
+.panel-discount {
+  font-size: 13px; font-style: italic; font-weight: 500;
+  color: var(--gold-bright); margin-top: 6px;
+}
 
 /* ─────────────────────────────────────────
    SHARED SECTION STYLES
@@ -553,6 +557,7 @@ footer {
 .offering-card--alt .offering-body  { color: #ffffff; font-weight: 400; }
 .offering-card--alt .offering-price { color: #ffffff; }
 .offering-card--alt .offering-price-label { color: var(--gold-bright); }
+.offering-card--alt .offering-price-discount { color: #ffffff; }
 .offering-card--alt .offering-features li { color: #ffffff; font-weight: 400; }
 .offering-card--alt .offering-features li::before { color: var(--gold-bright); }
 .offering-card--alt .offering-note  { color: rgba(252,250,245,0.90); }
@@ -587,6 +592,10 @@ footer {
 .offering-price-label {
   font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--gold-dark); margin-top: 8px; font-weight: 700; display: block;
+}
+.offering-price-discount {
+  font-size: 14px; font-style: italic; font-weight: 500;
+  color: var(--sage); margin-top: 10px; display: block;
 }
 .offering-features { list-style: none; margin-bottom: 24px; }
 .offering-features li {
