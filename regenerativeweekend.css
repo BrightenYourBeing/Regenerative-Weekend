@@ -25,11 +25,67 @@ body {
 }
 
 /* ─────────────────────────────────────────
+   TOP BANNER
+───────────────────────────────────────── */
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 64px;
+  z-index: 1100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  background: var(--gold);
+  color: var(--text-dark);
+  padding: 14px 32px;
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.top-banner-text {
+  font-size: 14.5px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-dark);
+  max-width: 760px;
+}
+.top-banner-text strong { font-weight: 700; }
+.top-banner-btn {
+  flex-shrink: 0;
+  display: inline-block;
+  background: var(--text-dark);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 26px;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.top-banner-btn:hover {
+  background: var(--sage);
+  transform: translateY(-1px);
+}
+
+/* push fixed topbar + page content down to make room for the banner */
+.hero { padding-top: 174px; }
+
+/* ─────────────────────────────────────────
    TOPBAR
 ───────────────────────────────────────── */
 .topbar {
   position: fixed;
-  top: 0;
+  top: 90px;
   left: 0;
   width: 100%;
   
@@ -88,7 +144,7 @@ body {
 .hero {
   min-height: 100vh; background: var(--sage);
   display: flex; flex-direction: column; justify-content: center;
-  position: relative; overflow: hidden; padding: 110px 48px 60px;
+  position: relative; overflow: hidden; padding: 180px 48px 60px;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
@@ -581,10 +637,12 @@ footer {
    RESPONSIVE
 ───────────────────────────────────────── */
 @media (max-width: 960px) {
-  .topbar { padding: 14px 24px; }
+  .top-banner { padding: 12px 20px; flex-direction: column; gap: 10px; }
+  .top-banner-text { font-size: 13px; max-width: 100%; }
+  .topbar { top: 110px; padding: 14px 24px; }
   .topbar-detail { display: none; }
   section { padding: 80px 24px; }
-  .hero { padding: 96px 24px 64px; }
+  .hero { padding: 194px 24px 64px; }
   .hero-inner { grid-template-columns: 1fr; gap: 44px; }
   .hero::after { display: none; }
   .why-grid, .clinicians-grid, .process-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -602,4 +660,6 @@ footer {
   .questions-grid { grid-template-columns: 1fr; }
   .included-grid { grid-template-columns: 1fr; }
   .logistics-grid { grid-template-columns: 1fr; }
+  .topbar { top: 130px; }
+  .hero { padding-top: 214px; }
 }
