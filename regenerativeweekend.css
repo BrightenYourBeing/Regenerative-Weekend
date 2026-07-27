@@ -372,8 +372,6 @@ hr.divider {
 .day-label {
   font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--gold-bright); margin-bottom: 8px; font-weight: 700; display: block;
-  /* reserve two lines so day titles stay aligned when a date range wraps */
-  line-height: 1.5; min-height: 3em;
 }
 .day-title {
   font-family: 'Cormorant Garamond', serif; font-size: 28px;
