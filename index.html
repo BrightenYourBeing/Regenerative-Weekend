@@ -9,14 +9,12 @@
 </head>
 <body>
 
-<!--
 <div class="top-banner">
   <p class="top-banner-text">
-    <strong>Reserve your spot for a complimentary Event</strong> — Escape to the mountains near Boulder for a chef-prepared meal, meaningful connections, and an exclusive wellness experience. Also offering a zoom presentation. Click here to see both
+    <strong>Try a Regenerative Reset — $96</strong> — Pop-up sessions in Longmont (Bliss Festival, Aug 14–15) and Colorado Springs (Aug 24). Come experience the technologies for yourself.
   </p>
-  <a href="https://info.brightenyourbeing.com/widget/form/m4edOJopmN6rZ3bpq7RB" class="top-banner-btn" target="_blank" rel="noopener noreferrer">Reserve My Spot</a>
+  <a href="#resets" class="top-banner-btn">See Reset Dates</a>
 </div>
--->
 
 <nav class="topbar">
   <img class="topbar-brand" src="BYBLogo.png" alt="Brighten Your Being Logo"></img>
@@ -382,11 +380,28 @@
   </div>
 </section>
 
-<section class="offerings-section">
+<section class="offerings-section" id="resets">
   <div class="section-inner">
-    <p class="section-eyebrow fade-in">What Is Available at Dragonfly Ranch</p>
-    <h2 class="section-title fade-in">The Full Five-Day<br><em>Regenerative Immersion</em></h2>
-    <div class="offerings-grid offerings-grid--single">
+    <p class="section-eyebrow fade-in">What Is Available in 2026</p>
+    <h2 class="section-title fade-in">Two Ways<br><em>to Begin</em></h2>
+    <div class="offerings-grid">
+      <div class="offering-card fade-in">
+        <span class="offering-tag">Upcoming Regenerative Resets</span>
+        <h3 class="offering-title">Regenerative Reset Session</h3>
+        <span class="offering-dates">Longmont · Bliss Festival — August 14 &amp; 15, 2026<br>Colorado Springs — August 24, 2026</span>
+        <p class="offering-body">Pop-ups in areas near where we hold our immersions, so that you can try some of the technologies for yourself. Neurofeedback, microcirculation optimization, structural integration, and a living group process in nature — the same work we do at Dragonfly Ranch, in a single session.</p>
+        <div class="offering-price-block">
+          <span class="offering-price">$96</span>
+          <span class="offering-price-label">Introductory Investment</span>
+        </div>
+        <ul class="offering-features">
+          <li>Neurofeedback sessions</li>
+          <li>Microcirculation optimization</li>
+          <li>Structural integration movement work</li>
+        </ul>
+        <p class="offering-note">For people who have done the inner work and are ready for a body that can hold what they know — come check us out.</p>
+        <a href="https://info.brightenyourbeing.com/widget/survey/8J2h2x6CcT0ioehCpc5W" class="btn-primary" style="margin-top:2rem; display:inline-block;" target="_blank" rel="noopener noreferrer">Reserve Your Spot</a>
+      </div>
       <div class="offering-card offering-card--alt fade-in">
         <span class="offering-tag">Upcoming · Offered Year-Round</span>
         <h3 class="offering-title">5-Day Regenerative Immersion</h3>
@@ -406,12 +421,12 @@
           <li>Small-group process &amp; forest immersion</li>
           <li>Post-immersion integration support</li>
         </ul>
-        <a href="https://info.brightenyourbeing.com/widget/survey/8J2h2x6CcT0ioehCpc5W" class="btn-primary" style="margin-top:1rem; display:inline-block;" target="_blank" rel="noopener noreferrer">Apply to Join</a>
+        <a href="https://info.brightenyourbeing.com/widget/survey/8J2h2x6CcT0ioehCpc5W" class="btn-primary" style="margin-top:2rem; display:inline-block;" target="_blank" rel="noopener noreferrer">Apply to Join</a>
         <p class="offering-note" style="margin-top:2rem;">If you have any questions, text LoriGrace.</p>
         <a href="sms:9703528873" class="btn-outline" style="margin-top:1rem; display:inline-block;">970-352-8873</a>
       </div>
     </div>
-    <p class="offering-footer fade-in">Five days, in a container small enough that it can be real. This immersion will show you what is possible within, between, and among. And that changes everything.</p>
+    <p class="offering-footer fade-in">A Reset is a first taste — a chance to feel what these technologies actually do in your own body. The five-day immersion is where the work goes all the way: within, between, and among. And that changes everything.</p>
   </div>
 </section>
 
@@ -471,6 +486,26 @@
 </footer>
 
 <script>
+  // The banner is fixed-position and its height changes when the text wraps,
+  // so measure the header bars and expose them as CSS vars for the layout offsets.
+  (function () {
+    var banner = document.querySelector('.top-banner');
+    var topbar = document.querySelector('.topbar');
+    function setHeaderHeights() {
+      var root = document.documentElement.style;
+      root.setProperty('--banner-h', (banner ? banner.offsetHeight : 0) + 'px');
+      if (topbar) root.setProperty('--topbar-h', topbar.offsetHeight + 'px');
+    }
+    setHeaderHeights();
+    window.addEventListener('resize', setHeaderHeights);
+    window.addEventListener('load', setHeaderHeights);
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(setHeaderHeights);
+      if (banner) ro.observe(banner);
+      if (topbar) ro.observe(topbar);
+    }
+  })();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
