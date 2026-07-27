@@ -488,13 +488,20 @@
 <script>
   // The banner is fixed-position and its height changes when the text wraps,
   // so measure the header bars and expose them as CSS vars for the layout offsets.
+  // Use fractional rect heights (offsetHeight rounds, e.g. 72.5 -> 73, which leaves
+  // a hairline gap under the banner) and floor them, so the bars overlap by a
+  // sub-pixel instead of separating. The banner paints above the topbar, and the
+  // topbar above the hero, so a slight overlap is invisible while a gap is not.
   (function () {
     var banner = document.querySelector('.top-banner');
     var topbar = document.querySelector('.topbar');
+    function measure(el) {
+      return el ? Math.floor(el.getBoundingClientRect().height) : 0;
+    }
     function setHeaderHeights() {
       var root = document.documentElement.style;
-      root.setProperty('--banner-h', (banner ? banner.offsetHeight : 0) + 'px');
-      if (topbar) root.setProperty('--topbar-h', topbar.offsetHeight + 'px');
+      root.setProperty('--banner-h', measure(banner) + 'px');
+      if (topbar) root.setProperty('--topbar-h', measure(topbar) + 'px');
     }
     setHeaderHeights();
     window.addEventListener('resize', setHeaderHeights);
@@ -505,7 +512,7 @@
       if (topbar) ro.observe(topbar);
     }
   })();
-
+ 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
