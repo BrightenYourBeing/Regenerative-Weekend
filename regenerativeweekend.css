@@ -367,6 +367,8 @@ hr.divider {
 .day-label {
   font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--gold-bright); margin-bottom: 8px; font-weight: 700; display: block;
+  /* reserve two lines so day titles stay aligned when a date range wraps */
+  line-height: 1.5; min-height: 3em;
 }
 .day-title {
   font-family: 'Cormorant Garamond', serif; font-size: 28px;
@@ -545,6 +547,16 @@ footer {
 .offerings-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 64px;
 }
+/* single-offering layout — one centered card instead of two columns */
+.offerings-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.offerings-grid--single .offering-card { text-align: center; }
+.offerings-grid--single .offering-features { text-align: left; max-width: 520px; margin-left: auto; margin-right: auto; }
+.offerings-grid--single .offering-price-block { max-width: 520px; margin-left: auto; margin-right: auto; }
 .offering-card {
   background: var(--tan); border: 1px solid rgba(138,94,10,0.25); padding: 56px 48px;
 }
