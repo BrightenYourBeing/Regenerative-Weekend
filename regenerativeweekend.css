@@ -46,26 +46,26 @@ body {
   gap: 24px;
   flex-wrap: wrap;
 
-  background: var(--gold);
-  color: var(--text-dark);
+  background: var(--sage);
+  color: #ffffff;
   padding: 14px 32px;
   box-sizing: border-box;
   text-align: center;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(201,151,60,0.35);
 }
 .top-banner-text {
   font-size: 14.5px;
   line-height: 1.5;
   font-weight: 400;
-  color: var(--text-dark);
+  color: #ffffff;
   max-width: 760px;
 }
 .top-banner-text strong { font-weight: 700; }
 .top-banner-btn {
   flex-shrink: 0;
   display: inline-block;
-  background: var(--text-dark);
-  color: var(--cream);
+  background: var(--gold);
+  color: var(--text-dark);
   font-family: 'DM Sans', sans-serif;
   font-size: 12.5px;
   font-weight: 700;
@@ -78,7 +78,8 @@ body {
   transition: all 0.3s ease;
 }
 .top-banner-btn:hover {
-  background: var(--sage);
+  background: var(--gold-light);
+  color: var(--text-dark);
   transform: translateY(-1px);
 }
 
