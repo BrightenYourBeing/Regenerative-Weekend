@@ -624,27 +624,28 @@ footer {
 /* ─────────────────────────────────────────
    LOGISTICS
 ───────────────────────────────────────── */
-.logistics-section { background: var(--sage); }
-.logistics-section .section-title { color: #ffffff; }
-.logistics-section .section-eyebrow { color: var(--gold-bright); }
+/* light section: separates the practical details from the dark closing CTA below,
+   and restores the page's alternating light/dark rhythm. Title/eyebrow inherit the
+   default light-background colours, so the overrides here are no longer needed. */
+.logistics-section { background: var(--tan); }
 .logistics-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 64px;
 }
 .logistics-card {
-  background: rgba(252,250,245,0.08); border: 1px solid rgba(201,151,60,0.25); padding: 40px 32px;
+  background: var(--cream); border: 1px solid rgba(138,94,10,0.25); padding: 40px 32px;
 }
 .logistics-label {
   font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold-bright); margin-bottom: 14px; font-weight: 700; display: block;
+  color: var(--gold-dark); margin-bottom: 14px; font-weight: 700; display: block;
 }
 .logistics-value {
   font-family: 'Cormorant Garamond', serif; font-size: 26px;
-  font-weight: 500; color: #ffffff; margin-bottom: 12px; line-height: 1.2; display: block;
+  font-weight: 500; color: var(--sage); margin-bottom: 12px; line-height: 1.2; display: block;
 }
-.logistics-body { font-size: 16px; line-height: 1.7; color: #ffffff; font-weight: 400; }
+.logistics-body { font-size: 16px; line-height: 1.7; color: var(--text-mid); font-weight: 400; }
 .logistics-note {
   margin-top: 52px; max-width: 680px; text-align: center; margin-left: auto; margin-right: auto;
-  font-size: 17px; line-height: 1.8; color: #ffffff; font-weight: 400; font-style: italic;
+  font-size: 17px; line-height: 1.8; color: var(--text-mid); font-weight: 400; font-style: italic;
 }
 
 /* ─────────────────────────────────────────
